@@ -1,0 +1,16 @@
+Source: janus-admin
+Section: admin
+Priority: extra
+Maintainer: Sipwise Development Team <support@sipwise.com>
+Build-Depends:
+ debhelper (>= 9~),
+Standards-Version: 3.9.7
+Homepage: https://www.sipwise.com/
+
+Package: ngcp-janus-admin
+Architecture: all
+Depends:
+ ${misc:Depends},
+ ${perl:Depends},
+Description: JanusAdmin is a node.js http client, that implements the
+  entire admin interface of the Janus Web RTC Gateway
