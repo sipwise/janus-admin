@@ -6,9 +6,9 @@
     "test": "mocha -R spec",
     "test-dev": "mocha -R spec -w"
   },
-  "author": "Hans-Peter Herzog",
+  "author": "Hans-Peter Herzog <hherzog@sipwise.com>",
   "license": "ISC",
-  "description": "Http client to access the janus admin endpoint",
+  "description": "JanusAdmin is a node.js http client that implements the admin interface of the Janus WebRTC Gateway",
   "devDependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
@@ -20,7 +20,6 @@
     "lodash": "^4.16.4",
     "superagent": "^2.3.0",
     "uuid": "^2.0.3",
-    "validator": "^6.1.0",
-    "yargs": "^6.3.0"
+    "validator": "^6.1.0"
   }
 }
