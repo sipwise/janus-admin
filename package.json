@@ -1,0 +1,26 @@
+{
+  "name": "janus-admin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec",
+    "test-dev": "mocha -R spec -w"
+  },
+  "author": "Hans-Peter Herzog",
+  "license": "ISC",
+  "description": "Http client to access the janus admin endpoint",
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mocha": "^3.1.2"
+  },
+  "dependencies": {
+    "chai": "^3.5.0",
+    "debug-logger": "^0.4.1",
+    "lodash": "^4.16.4",
+    "superagent": "^2.3.0",
+    "uuid": "^2.0.3",
+    "validator": "^6.1.0",
+    "yargs": "^6.3.0"
+  }
+}
