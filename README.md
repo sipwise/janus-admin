@@ -98,3 +98,11 @@ Methods (token based authentication)
     }).catch((err)=>{
         ...
     });
+
+### Remove all tokens
+
+    adminClient.removeAllTokens().then((res)=>{
+        ...
+    }).catch((err)=>{
+        ...
+    });

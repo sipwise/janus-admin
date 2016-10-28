@@ -229,6 +229,22 @@ class Admin {
         });
     }
 
+    removeAllTokens() {
+        return new Promise((resolve, reject)=>{
+            this.listTokens().then((res)=>{
+                var tokenRemovePromises = [];
+                _.forEach(res.tokens, (token)=>{
+                    tokenRemovePromises.push(this.removeToken(token.token));
+                });
+                return Promise.all(tokenRemovePromises);
+            }).then(()=>{
+                resolve();
+            }).catch((err)=>{
+                reject(err);
+            });
+        });
+    }
+
 }
 
 module.exports.JanusAdmin = Admin;

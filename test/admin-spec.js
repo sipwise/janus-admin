@@ -176,7 +176,15 @@ describe('Admin', function() {
         });
 
         it('should remove a token', function(done){
-            adminClient.removeToken(exampleToken).then((res)=>{
+            adminClient.removeToken(exampleToken).then(()=>{
+                done();
+            }).catch((err)=>{
+                done(err);
+            });
+        });
+
+        it('should remove all tokens', function(done){
+            adminClient.removeAllTokens().then(()=>{
                 done();
             }).catch((err)=>{
                 done(err);
