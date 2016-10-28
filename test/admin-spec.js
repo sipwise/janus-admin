@@ -27,6 +27,24 @@ describe('Admin', function() {
         });
     });
 
+    it('should make url by given path', function(done){
+        var url = 'http://localhost:7088';
+        var finalUrl = url + '/path';
+        var adminClient1 = new Admin({
+            url: url,
+            secret: adminServer.getAdminSecret()
+        });
+        var adminClient2 = new Admin({
+            url: url + '/',
+            secret: adminServer.getAdminSecret()
+        });
+        assert(adminClient1.makeUrl('/path'), finalUrl);
+        assert(adminClient1.makeUrl('path'), finalUrl);
+        assert(adminClient2.makeUrl('/path'), finalUrl);
+        assert(adminClient2.makeUrl('path'), finalUrl);
+        done();
+    });
+
     it('should throw an error caused by missing option url', function(done){
         try {
             adminClient = new Admin({
