@@ -1,7 +1,7 @@
 {
   "name": "janus-admin",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/admin.js",
   "scripts": {
     "test": "mocha -R spec",
     "test-dev": "mocha -R spec -w"
