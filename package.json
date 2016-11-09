@@ -1,15 +1,18 @@
 {
   "name": "janus-admin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/admin.js",
   "scripts": {
     "test": "mocha -R spec",
     "test-dev": "mocha -R spec -w"
   },
   "author": "Hans-Peter Herzog <hherzog@sipwise.com>",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "description": "JanusAdmin is a node.js http client that implements the admin interface of the Janus WebRTC Gateway",
-  "devDependencies": {
+    "keywords": [
+        "janus"
+    ],
+    "devDependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "mocha": "^3.1.2"
