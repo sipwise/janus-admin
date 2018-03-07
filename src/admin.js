@@ -1,14 +1,24 @@
 'use strict';
 
 var url = require('url');
-var validator = require('validator');
 var _ = require('lodash');
 var createId = require('uuid').v4;
-var assert = require('chai').assert;
 var userAgent = require('superagent');
+var assert = require('./assert').assert;
 var Response = require('./response').Response;
 var ResponseError = require('./error').ResponseError;
-var logger = require('debug-logger')('janus:admin');
+
+
+function isURL(str) {
+  var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+  '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
+  '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+  '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+  '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+  '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+  return pattern.test(str);
+}
+
 
 /**
  * @class
@@ -17,7 +27,7 @@ class Admin {
 
     constructor(options) {
         assert.property(options, 'url', 'Missing option url');
-        assert(validator.isURL(options.url), 'Invalid url', options.url);
+        assert(isURL(options.url), 'Invalid url', options.url);
         assert.property(options, 'secret');
         this.url = url.parse(options.url);
         this.secret = options.secret;
@@ -33,12 +43,12 @@ class Admin {
             var path = _.get(options, 'path', '/admin');
             req.admin_secret = this.secret;
             req.transaction = createId();
-            logger.debug('Request', req);
+            // logger.debug('Request', req);
             this.userAgent.post(this.makeUrl(path)).type('json').send(req).end((err, res)=>{
                 if(_.isObject(err)) {
                     return reject(err);
                 }
-                logger.debug('Response', res.body);
+                // logger.debug('Response', res.body);
                 var response = new Response(req, res.body);
                 if(response.isSuccess()) {
                     resolve(response);
