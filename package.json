@@ -1,32 +1,21 @@
 {
   "name": "janus-admin",
-  "version": "1.0.4",
+  "version": "0.0.4",
   "main": "src/admin.js",
-  "scripts": {
-    "test": "mocha -R spec --full-trace test/*-spec.js",
-    "test-dev": "mocha -R spec -w test/*-spec.js"
-  },
+  "scripts": {},
   "author": "Hans-Peter Herzog <hherzog@sipwise.com>",
   "license": "GPL-3.0",
   "description": "JanusAdmin is a node.js http client that implements the admin interface of the Janus WebRTC Gateway",
-    "keywords": [
-        "janus"
-    ],
-    "repository" : {
-        "type" : "git",
-        "url" : "https://github.com/sipwise/janus-admin.git"
-    },
-    "devDependencies": {
-    "body-parser": "1.15.2",
-    "express": "4.14.0",
-    "mocha": "3.1.2"
+  "keywords": [
+    "janus"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sipwise/janus-admin.git"
   },
   "dependencies": {
-    "chai": "3.5.0",
-    "debug-logger": "0.4.1",
     "lodash": "4.16.4",
-    "superagent": "2.3.0",
     "uuid": "2.0.3",
-    "validator": "6.1.0"
+    "superagent": "2.3.0"
   }
 }
