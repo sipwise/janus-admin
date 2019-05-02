@@ -1,3 +1,30 @@
+janus-admin (5.0.0.0+0~mr7.4.0.0) unstable; urgency=medium
+
+  [ Hans-Peter Herzog ]
+  * [3fd7c74] TT#5036 Add entry point for package
+  * [53d1c92] TT#5036 Added debug logger for requests. Normalize url and path via makeUrl.
+  * [cfeaecd] TT#5036 Add method removeAllTokens
+  * [947e70e] TT#2723 Created npm shrinkwrap
+  * [bcd57d0] TT#2723 Javascript syntax highlighting in README
+  * [d7f2d97] TT#2723 Changed licence
+  * [cedba63] TT#2723 Added git repo url to package file
+  * [750ff36] TT#2723 New version
+  * [1a6e1d3] TT#2723 Lock npm deps
+
+  [ Markus Danek ]
+  * [9f5cea5] TT#15811 Add Dockerfile and testrunner script
+
+  [ Sergii Kipot ]
+  * [aef5fd2] TT#15750 Add our own npm registry cache to .npmrc
+
+  [ Alexander Lutay ]
+  * [f3e1d8e] TT#22402 Switch janus-admin Dockerfile to Debian stretch
+
+  [ Guillem Jover ]
+  * [018bf9a] TT#22072 Update packaging
+
+ -- Alex Lutay <alutay@sipwise.com>  Thu, 02 May 2019 16:10:37 +0200
+
 janus-admin (5.0.0.0+0~mr5.0.0.0) unstable; urgency=medium
 
   * Initial revision
