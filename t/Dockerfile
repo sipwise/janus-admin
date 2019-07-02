@@ -5,16 +5,18 @@ FROM docker.mgm.sipwise.com/sipwise-buster:latest
 # is updated with the current date. It will force refresh of all
 # of the base images and things like `apt-get update` won't be using
 # old cached versions when the Dockerfile is built.
-ENV REFRESHED_AT 2019-06-27
+ENV REFRESHED_AT 2019-07-02
 
-# TODO - the release-trunk-buster is too dynamic yet, though required build deps
-RUN echo "deb https://deb.sipwise.com/autobuild/ release-trunk-buster main" >>/etc/apt/sources.list
+COPY t/sources.list.d/builddeps.list /etc/apt/sources.list.d/
+COPY t/sources.list.d/preferences /etc/apt/preferences.d/
 
-RUN apt-get update
-RUN apt-get install --assume-yes \
+RUN apt-get update && \
+  apt-get install --assume-yes \
         curl \
         nodejs \
-        npm
+        npm \
+        && \
+  apt-get clean
 
 ADD package.json /tmp/
 ADD npm-shrinkwrap.json /tmp/
