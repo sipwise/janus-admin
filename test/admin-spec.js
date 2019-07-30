@@ -1,15 +1,14 @@
 'use strict';
 
-var Admin = require('../src/admin').JanusAdmin;
-var assert = require('chai').assert;
-var _ = require('lodash');
-
-var JanusAdminServer = require('../src/mock/janus-admin-server').JanusAdminServer;
+const Admin = require('../src/admin').JanusAdmin;
+const assert = require('chai').assert;
+const _ = require('lodash');
+const JanusAdminServer = require('../src/mock/janus-admin-server').JanusAdminServer;
 
 describe('Admin', function() {
 
-    var adminServer;
-    var adminClient;
+    let adminServer;
+    let adminClient;
 
     before(function(done){
         adminServer = new JanusAdminServer();
@@ -28,13 +27,13 @@ describe('Admin', function() {
     });
 
     it('should make url by given path', function(done){
-        var url = 'http://localhost:7088';
-        var finalUrl = url + '/path';
-        var adminClient1 = new Admin({
+        let url = 'http://localhost:7088';
+        let finalUrl = url + '/path';
+        let adminClient1 = new Admin({
             url: url,
             secret: adminServer.getAdminSecret()
         });
-        var adminClient2 = new Admin({
+        let adminClient2 = new Admin({
             url: url + '/',
             secret: adminServer.getAdminSecret()
         });
@@ -121,8 +120,8 @@ describe('Admin', function() {
 
     describe('Token based authentication',function(){
 
-        var exampleToken = 'abcdef';
-        var examplePlugins = [
+        let exampleToken = 'abcdef';
+        let examplePlugins = [
             'janus.plugin.videoroom',
             'janus.plugin.echotest'
         ];

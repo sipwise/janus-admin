@@ -1,14 +1,14 @@
 'use strict';
 
-var url = require('url');
-var validator = require('validator');
-var _ = require('lodash');
-var createId = require('uuid').v4;
-var assert = require('chai').assert;
-var userAgent = require('superagent');
-var Response = require('./response').Response;
-var ResponseError = require('./error').ResponseError;
-var logger = require('debug-logger')('janus:admin');
+const url = require('url');
+const validator = require('validator');
+const _ = require('lodash');
+const createId = require('uuid').v4;
+const assert = require('chai').assert;
+const userAgent = require('superagent');
+const Response = require('./response').Response;
+const ResponseError = require('./error').ResponseError;
+const logger = require('debug-logger')('janus:admin');
 
 /**
  * @class
@@ -17,7 +17,10 @@ class Admin {
 
     constructor(options) {
         assert.property(options, 'url', 'Missing option url');
-        assert(validator.isURL(options.url), 'Invalid url', options.url);
+        assert(validator.isURL(options.url, {
+            require_tld: false,
+            require_protocol: true
+        }), 'Invalid url', options.url);
         assert.property(options, 'secret');
         this.url = url.parse(options.url);
         this.secret = options.secret;
@@ -30,7 +33,7 @@ class Admin {
 
     request(req, options) {
         return new Promise((resolve, reject)=>{
-            var path = _.get(options, 'path', '/admin');
+            let path = _.get(options, 'path', '/admin');
             req.admin_secret = this.secret;
             req.transaction = createId();
             logger.debug('Request', req);
@@ -39,7 +42,7 @@ class Admin {
                     return reject(err);
                 }
                 logger.debug('Response', res.body);
-                var response = new Response(req, res.body);
+                let response = new Response(req, res.body);
                 if(response.isSuccess()) {
                     resolve(response);
                 } else {
@@ -139,7 +142,7 @@ class Admin {
     addToken(token, plugins) {
         return new Promise((resolve, reject)=>{
             assert.isString(token);
-            var request = {
+            let request = {
                 janus: 'add_token',
                 token: token
             };
@@ -232,7 +235,7 @@ class Admin {
     removeAllTokens() {
         return new Promise((resolve, reject)=>{
             this.listTokens().then((res)=>{
-                var tokenRemovePromises = [];
+                let tokenRemovePromises = [];
                 _.forEach(res.tokens, (token)=>{
                     tokenRemovePromises.push(this.removeToken(token.token));
                 });
