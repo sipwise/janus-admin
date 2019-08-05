@@ -19,7 +19,7 @@ RUN apt-get update && \
   apt-get clean
 
 ADD package.json /tmp/
-ADD npm-shrinkwrap.json /tmp/
+ADD package-lock.json /tmp/
 ADD README.md /tmp/
 
 WORKDIR /tmp
