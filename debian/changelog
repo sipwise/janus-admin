@@ -1,3 +1,21 @@
+janus-admin (5.0.0.0+0~mr8.0.0.0) unstable; urgency=medium
+
+  [ Alexander Lutay ]
+  * [d445ec7] TT#60950 Switch janus-admin docker to buster
+  * [91fac1e] TT#60100 TT#44859 Update janus-admin Dockerfile (remove hardcoded release-trunk-buster)
+  * [d875383] TT#60100 Use npm-registry.sipwise.com in npm-shrinkwrap.json
+
+  [ Guillem Jover ]
+  * [65c2d31] TT#61954 Update copyright years
+  * [16952ce] TT#61954 Set debhelper compat level in Build-Depends instead of debian/compat
+
+  [ Hans-Peter Herzog ]
+  * [1911307] TT#63759 janus-admin: Update package dependencies and npm locking version
+
+  [ Sipwise Jenkins Builder ]
+
+ -- Sipwise Jenkins Builder <jenkins@sipwise.com>  Mon, 05 Aug 2019 20:54:06 +0200
+
 janus-admin (5.0.0.0+0~mr7.5.0.0) unstable; urgency=medium
 
   * New release.
