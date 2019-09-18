@@ -1,3 +1,13 @@
+janus-admin (5.0.0.0+0~mr7.4.2.1) unstable; urgency=medium
+
+  [ Alexander Lutay ]
+  * [b7d369f] TT#60100 TT#44859 Update janus-admin Dockerfile (as we mark it as 'upstream')
+  * [dcdc44e] TT#60100 Use npm-registry.sipwise.com in npm-shrinkwrap.json
+
+  [ Sipwise Jenkins Builder ]
+
+ -- Sipwise Jenkins Builder <jenkins@sipwise.com>  Wed, 18 Sep 2019 22:31:43 +0200
+
 janus-admin (5.0.0.0+0~mr7.4.2.0) unstable; urgency=medium
 
   * New release.
