@@ -1,3 +1,12 @@
+janus-admin (5.0.0.0+0~mr8.0.1.0) unstable; urgency=medium
+
+  [ Alexander Lutay ]
+  * [0682409] TT#63759 Fix 19113071: replace removed npm-shrinkwrap.json with package-lock.json in Dockerfile
+
+  [ Sipwise Jenkins Builder ]
+
+ -- Sipwise Jenkins Builder <jenkins@sipwise.com>  Tue, 08 Oct 2019 09:07:13 +0200
+
 janus-admin (5.0.0.0+0~mr8.0.0.0) unstable; urgency=medium
 
   [ Alexander Lutay ]
