@@ -1,3 +1,9 @@
+janus-admin (5.0.0.0+0~mr8.5.3.1) unstable; urgency=medium
+
+  * New release.
+
+ -- Sipwise Jenkins Builder <jenkins@sipwise.com>  Thu, 14 Jan 2021 16:47:37 +0100
+
 janus-admin (5.0.0.0+0~mr8.5.3.0) unstable; urgency=medium
 
   * New release.
