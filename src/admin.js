@@ -71,19 +71,19 @@ class Admin {
         return new Promise((resolve, reject)=>{
             assert.isString(sessionId);
             this.request({
-                janus: 'destroy'
+                janus: 'destroy_session'
             }, {
                 path: '/admin/' + sessionId
             }).then((res)=>{
                 resolve({
-                    // info: _.get(res.getResponse(), 'info', {}),
+                    status: res.getResponse(),
                     response: res
                 });
             }).catch((err)=>{
                 reject(err);
             });
         });
-    }    
+    }
 
     listHandles(sessionId) {
         return new Promise((resolve, reject)=>{
@@ -126,14 +126,14 @@ class Admin {
         return new Promise((resolve, reject)=>{
             assert.isString(sessionId);
             assert.isString(handleId);
-            console.log('/admin/' + sessionId);
             this.request({
-                janus: 'detach'
+                janus: 'detach_handle'
             }, {
-                path: '/admin/' + sessionId
+                path: '/admin/' + sessionId + '/' + handleId
             }).then((res)=>{
                 resolve({
                     // info: _.get(res.getResponse(), 'info', {}),
+                    status: res.getResponse(),
                     response: res
                 });
             }).catch((err)=>{
