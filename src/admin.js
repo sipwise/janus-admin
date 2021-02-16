@@ -67,6 +67,24 @@ class Admin {
         });
     }
 
+    destorySession(sessionId) {
+        return new Promise((resolve, reject)=>{
+            assert.isString(sessionId);
+            this.request({
+                janus: 'destroy_session'
+            }, {
+                path: '/admin/' + sessionId
+            }).then((res)=>{
+                resolve({
+                    status: res.getResponse(),
+                    response: res
+                });
+            }).catch((err)=>{
+                reject(err);
+            });
+        });
+    }
+
     listHandles(sessionId) {
         return new Promise((resolve, reject)=>{
             assert.isString(sessionId);
@@ -96,6 +114,26 @@ class Admin {
             }).then((res)=>{
                 resolve({
                     info: _.get(res.getResponse(), 'info', {}),
+                    response: res
+                });
+            }).catch((err)=>{
+                reject(err);
+            });
+        });
+    }
+
+    handleDetach(sessionId, handleId) {
+        return new Promise((resolve, reject)=>{
+            assert.isString(sessionId);
+            assert.isString(handleId);
+            this.request({
+                janus: 'detach_handle'
+            }, {
+                path: '/admin/' + sessionId + '/' + handleId
+            }).then((res)=>{
+                resolve({
+                    // info: _.get(res.getResponse(), 'info', {}),
+                    status: res.getResponse(),
                     response: res
                 });
             }).catch((err)=>{
