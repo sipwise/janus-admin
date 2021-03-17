@@ -1,6 +1,6 @@
 {
   "name": "janus-admin",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "src/admin.js",
   "scripts": {
     "test": "mocha -b --exit -R spec --full-trace test/*-spec.js",
@@ -19,12 +19,12 @@
   "devDependencies": {
     "body-parser": "1.19.0",
     "express": "4.17.1",
-    "mocha": "6.2.0"
+    "mocha": "^8.3.2"
   },
   "dependencies": {
     "chai": "4.2.0",
     "debug-logger": "0.4.1",
-    "lodash": "4.17.15",
+    "lodash": "^4.17.21",
     "superagent": "5.1.0",
     "uuid": "3.3.2",
     "validator": "11.1.0"
