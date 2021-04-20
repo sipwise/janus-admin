@@ -1,3 +1,13 @@
+janus-admin (5.0.0.0+0~mr9.5.0.0) unstable; urgency=medium
+
+  [ Hans-Peter Herzog ]
+  * [59d867d] TT#111459 GitHub security alert for janus-admin.git: minimist/lodash/yargs-parser
+
+  [ Manuel Montecelo ]
+  * [84eb9fc] TT#113853 Preparations for release mr8.5.4, missing "mocha" binary
+
+ -- Sipwise Jenkins Builder <jenkins@sipwise.com>  Tue, 20 Apr 2021 11:56:51 +0200
+
 janus-admin (5.0.0.0+0~mr9.4.0.0) unstable; urgency=medium
 
   * New release.
