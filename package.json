@@ -27,6 +27,6 @@
     "lodash": "^4.17.21",
     "superagent": "5.1.0",
     "uuid": "3.3.2",
-    "validator": "11.1.0"
+    "validator": "13.7.0"
   }
 }
